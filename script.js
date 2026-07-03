@@ -111,105 +111,105 @@
 
 // smthn(arr2);
 
-//3
-//3.1
-const masina = {
-  marca: "Toshiba",
-  model: "Honda",
-  an: 1994,
-};
-//3.2
-console.log(`marca: ${masina.marca}, model:${masina.model}`);
-console.log(`marca: ${masina["marca"]}, model:${masina["model"]}`);
-//3.3
-masina.culoare = "Bumblebee";
-masina.an = 2000;
+// //3
+// //3.1
+// const masina = {
+//   marca: "Toshiba",
+//   model: "Honda",
+//   an: 1994,
+// };
+// //3.2
+// console.log(`marca: ${masina.marca}, model:${masina.model}`);
+// console.log(`marca: ${masina["marca"]}, model:${masina["model"]}`);
+// //3.3
+// masina.culoare = "Bumblebee";
+// masina.an = 2000;
 
-//3.4
-delete masina.model;
-console.log(masina);
+// //3.4
+// delete masina.model;
+// console.log(masina);
 
-//3.5
-for (const key in masina) {
-  const element = masina[key];
-  console.log(`key:${key}, value:${element}`);
-}
-//3.6
-masina.descriere = function () {
-  let str = "";
-  for (const key in this) {
-    if (typeof this[key] !== "function") {
-      str += `${key}: ${this[key]}, `;
-    }
-  }
-  return str.slice(0, -2);
-};
+// //3.5
+// for (const key in masina) {
+//   const element = masina[key];
+//   console.log(`key:${key}, value:${element}`);
+// }
+// //3.6
+// masina.descriere = function () {
+//   let str = "";
+//   for (const key in this) {
+//     if (typeof this[key] !== "function") {
+//       str += `${key}: ${this[key]}, `;
+//     }
+//   }
+//   return str.slice(0, -2);
+// };
 
-console.log(masina.descriere());
-//3.7
-const persoana = {
-  nume: "John",
-  varsta: 24,
-};
-function mesaj({ nume, varsta }) {
-  return `nume: ${nume}, varsta: ${varsta}`;
-}
-console.log(mesaj(persoana));
+// console.log(masina.descriere());
+// //3.7
+// const persoana = {
+//   nume: "John",
+//   varsta: 24,
+// };
+// function mesaj({ nume, varsta }) {
+//   return `nume: ${nume}, varsta: ${varsta}`;
+// }
+// console.log(mesaj(persoana));
 
-//3.8
-let hasCuloareaKey = false;
-for (const key in masina) {
-  if (!Object.hasOwn(masina, key)) continue;
-  if (key === "culoare") {
-    hasCuloareaKey = true;
-  }
-}
-console.log(`Are obiectul masina prop. culoarea? -> ${hasCuloareaKey}`);
+// //3.8
+// let hasCuloareaKey = false;
+// for (const key in masina) {
+//   if (!Object.hasOwn(masina, key)) continue;
+//   if (key === "culoare") {
+//     hasCuloareaKey = true;
+//   }
+// }
+// console.log(`Are obiectul masina prop. culoarea? -> ${hasCuloareaKey}`);
 
-//3.9
-const casa = {
-  adresa: {
-    strada: "str. Sessamme",
-    oras: "fig ego znaet",
-  },
-};
-//3.10
-function createStudent(nume, varsta, nota) {
-  return {
-    nume,
-    varsta,
-    nota,
-  };
-}
-console.log(createStudent("Bob", 25, 8));
-//3.12
-function adunare(...numbers) {
-  return numbers.reduce((total, num) => total + num, 0);
-}
+// //3.9
+// const casa = {
+//   adresa: {
+//     strada: "str. Sessamme",
+//     oras: "fig ego znaet",
+//   },
+// };
+// //3.10
+// function createStudent(nume, varsta, nota) {
+//   return {
+//     nume,
+//     varsta,
+//     nota,
+//   };
+// }
+// console.log(createStudent("Bob", 25, 8));
+// //3.12
+// function adunare(...numbers) {
+//   return numbers.reduce((total, num) => total + num, 0);
+// }
 
-function scadere(...numbers) {
-  return numbers.reduce((accumulator, num) => accumulator - num);
-}
+// function scadere(...numbers) {
+//   return numbers.reduce((accumulator, num) => accumulator - num);
+// }
 
-function inmultire(...numbers) {
-  return numbers.reduce((total, num) => total * num, 1);
-}
+// function inmultire(...numbers) {
+//   return numbers.reduce((total, num) => total * num, 1);
+// }
 
-function impartire(...numbers) {
-  if (numbers.length === 0) return 0;
-  return numbers.reduce((accumulator, current) => accumulator / current);
-}
+// function impartire(...numbers) {
+//   if (numbers.length === 0) return 0;
+//   return numbers.reduce((accumulator, current) => accumulator / current);
+// }
 
-const calculator = {
-  adunare,
-  scadere,
-  inmultire,
-  impartire,
-};
-//3.13
-const { marca, culoare, an } = masina;
+// const calculator = {
+//   adunare,
+//   scadere,
+//   inmultire,
+//   impartire,
+// };
+// //3.13
+// const { marca, culoare, an } = masina;
 
-console.log(`${marca}, ${culoare}, ${an}`);
+// console.log(`${marca}, ${culoare}, ${an}`);
 
 //4 Arrays
 //4.1
@@ -219,3 +219,72 @@ console.log(arr1[0]);
 arr1.push("Cahul");
 arr1.unshift("Balti");
 console.log(String(arr1));
+//4.3
+const culori = ["alb", "rosu", "verde", "violet", "negru"];
+for (let i = 0; i < culori.length; i++) {
+  console.log(culori[i]);
+}
+//4.4
+const animale = [
+  "dog",
+  "cat",
+  "parrot",
+  "whale",
+  "whale",
+  "horse",
+  "fox",
+  "dog",
+];
+animale.forEach((element, index) => {
+  console.log(`Personalized message ${index + 1}: ${element} :)`);
+});
+
+//4.5
+const numArray = [1, 20, 12, 4, 5, 410, 9, 67];
+console.log(numArray.filter((element) => element > 10));
+
+//4.6
+const sortedArray = numArray.sort((a, b) => a - b);
+console.log(sortedArray);
+
+//4.7
+const squareNumArray = numArray.map((element) => element * element);
+console.log(squareNumArray);
+
+//4.8
+const sumOfArray = numArray.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+);
+console.log(sumOfArray);
+
+//4.9
+console.log(numArray.includes(4));
+console.log(numArray.indexOf(21) !== -1);
+
+//4.10
+const mashedArrays = animale.concat(culori);
+console.log(mashedArrays);
+
+const mashedArrays2 = [...animale, ...culori];
+console.log(mashedArrays2);
+
+//4.11
+const bidon = [
+  [1, 2],
+  [3, 4],
+];
+console.log(bidon[1][0]);
+
+//4.12
+const noDupes = [...new Set(animale)];
+console.log(noDupes);
+
+const noDupesFilter = animale.filter(
+  (element, index) => animale.indexOf(element) === index,
+);
+console.log(noDupesFilter);
+
+//4.13
+const newSlicedArray = numArray.slice();
+newSlicedArray.splice(1, 1);
+console.log(newSlicedArray);
