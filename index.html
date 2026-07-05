@@ -1,6 +1,55 @@
 <!doctype html>
 <html>
   <body>
+    <header>
+      <h1 id="header-text">Sample Text Header</h1>
+    </header>
+    <ol>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+    </ol>
+    <ul id="un-list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <div id="container"></div>
+    <div id="box">
+      <h2 id="text-change">Text to change</h2>
+      <button type="button" id="button-text-change">Push me</button>
+    </div>
+
+    <div id="text-monitor">
+      <input type="text" name="monitor" id="monitor" />
+      <p id="monitor-p"></p>
+    </div>
+
+    <div id="div-table">
+      <input
+        type="number"
+        name="table-cols"
+        id="table-cols"
+        min="2"
+        max="8"
+        placeholder="Columns number"
+      />
+      <input
+        type="number"
+        name="table-rows"
+        id="table-rows"
+        min="2"
+        max="8"
+        placeholder="Rows number..."
+      /><br />
+      <button type="submit" id="create-table">Create Table</button>
+    </div>
+
+    <input type="text" name="input-list" id="input-list" />
+    <button type="submit" id="submit-list">Submit</button>
     <script src="script.js"></script>
   </body>
 </html>

@@ -211,80 +211,191 @@
 
 // console.log(`${marca}, ${culoare}, ${an}`);
 
-//4 Arrays
-//4.1
-const arr1 = ["Chisinau", "Orhei", "Lipcani"];
-console.log(arr1[0]);
-//4.2
-arr1.push("Cahul");
-arr1.unshift("Balti");
-console.log(String(arr1));
-//4.3
-const culori = ["alb", "rosu", "verde", "violet", "negru"];
-for (let i = 0; i < culori.length; i++) {
-  console.log(culori[i]);
-}
-//4.4
-const animale = [
-  "dog",
-  "cat",
-  "parrot",
-  "whale",
-  "whale",
-  "horse",
-  "fox",
-  "dog",
-];
-animale.forEach((element, index) => {
-  console.log(`Personalized message ${index + 1}: ${element} :)`);
+// //4 Arrays
+// //4.1
+// const arr1 = ["Chisinau", "Orhei", "Lipcani"];
+// console.log(arr1[0]);
+// //4.2
+// arr1.push("Cahul");
+// arr1.unshift("Balti");
+// console.log(String(arr1));
+// //4.3
+// const culori = ["alb", "rosu", "verde", "violet", "negru"];
+// for (let i = 0; i < culori.length; i++) {
+//   console.log(culori[i]);
+// }
+// //4.4
+// const animale = [
+//   "dog",
+//   "cat",
+//   "parrot",
+//   "whale",
+//   "whale",
+//   "horse",
+//   "fox",
+//   "dog",
+// ];
+// animale.forEach((element, index) => {
+//   console.log(`Personalized message ${index + 1}: ${element} :)`);
+// });
+
+// //4.5
+// const numArray = [1, 20, 12, 4, 5, 410, 9, 67];
+// console.log(numArray.filter((element) => element > 10));
+
+// //4.6
+// const sortedArray = numArray.sort((a, b) => a - b);
+// console.log(sortedArray);
+
+// //4.7
+// const squareNumArray = numArray.map((element) => element * element);
+// console.log(squareNumArray);
+
+// //4.8
+// const sumOfArray = numArray.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+// );
+// console.log(sumOfArray);
+
+// //4.9
+// console.log(numArray.includes(4));
+// console.log(numArray.indexOf(21) !== -1);
+
+// //4.10
+// const mashedArrays = animale.concat(culori);
+// console.log(mashedArrays);
+
+// const mashedArrays2 = [...animale, ...culori];
+// console.log(mashedArrays2);
+
+// //4.11
+// const bidon = [
+//   [1, 2],
+//   [3, 4],
+// ];
+// console.log(bidon[1][0]);
+
+// //4.12
+// const noDupes = [...new Set(animale)];
+// console.log(noDupes);
+
+// const noDupesFilter = animale.filter(
+//   (element, index) => animale.indexOf(element) === index,
+// );
+// console.log(noDupesFilter);
+
+// //4.13
+// const newSlicedArray = numArray.slice();
+// newSlicedArray.splice(1, 1);
+// console.log(newSlicedArray);
+
+//5
+//5.1
+const headerH1 = document.getElementById("header-text");
+headerH1.style.color = "green";
+
+//5.2
+const selectAllLists = document.querySelectorAll("li");
+selectAllLists.forEach((element) => {
+  element.style.color = "purple";
 });
 
-//4.5
-const numArray = [1, 20, 12, 4, 5, 410, 9, 67];
-console.log(numArray.filter((element) => element > 10));
+//5.3
+const myParagraph = document.createElement("p");
+myParagraph.textContent = "lorem ipsum";
+const container = document.getElementById("container");
+container.appendChild(myParagraph);
 
-//4.6
-const sortedArray = numArray.sort((a, b) => a - b);
-console.log(sortedArray);
+//5.4
+const myImage = document.createElement("img");
+myImage.width = 400;
+myImage.height = 200;
+myImage.src =
+  "https://external-preview.redd.it/no-spoilers-animated-wallpaper-life-is-strange-watching-the-v0-siuZg6WNledojosihur32RTFxyveCtzRUPOgiA79dJM.png?format=pjpg&auto=webp&s=db428a118cd277aa0be1014c7e261678f20cadcb";
+container.appendChild(myImage);
 
-//4.7
-const squareNumArray = numArray.map((element) => element * element);
-console.log(squareNumArray);
+//5.5
+const box = document.getElementById("box");
+box.classList.add("new-class");
 
-//4.8
-const sumOfArray = numArray.reduce(
-  (accumulator, currentValue) => accumulator + currentValue,
-);
-console.log(sumOfArray);
+//5.6
+container.removeChild(myParagraph);
 
-//4.9
-console.log(numArray.includes(4));
-console.log(numArray.indexOf(21) !== -1);
+//5.7
+document
+  .getElementById("button-text-change")
+  .addEventListener("click", changeText);
+function changeText() {
+  document.getElementById("text-change").innerHTML = "Text was changed, horay!";
+}
 
-//4.10
-const mashedArrays = animale.concat(culori);
-console.log(mashedArrays);
+//5.8
+document.getElementById("monitor").addEventListener("input", function () {
+  document.getElementById("monitor-p").innerHTML =
+    document.getElementById("monitor").value;
+});
 
-const mashedArrays2 = [...animale, ...culori];
-console.log(mashedArrays2);
+//5.9
+const myUList = document.getElementById("un-list");
+const listChildren = myUList.children;
 
-//4.11
-const bidon = [
-  [1, 2],
-  [3, 4],
-];
-console.log(bidon[1][0]);
+console.log(listChildren[0].innerHTML);
+console.log(listChildren[listChildren.length - 1].innerHTML);
 
-//4.12
-const noDupes = [...new Set(animale)];
-console.log(noDupes);
+//5.10
+document
+  .getElementById("button-text-change")
+  .addEventListener("click", function () {
+    document.getElementById("text-change").classList.add("active");
+  });
 
-const noDupesFilter = animale.filter(
-  (element, index) => animale.indexOf(element) === index,
-);
-console.log(noDupesFilter);
+//5.11
+document.getElementById("create-table").addEventListener("click", function () {
+  const colsNumber = document.getElementById("table-cols").value;
+  const rowsNumber = document.getElementById("table-rows").value;
+  createTable(colsNumber, rowsNumber);
+});
 
-//4.13
-const newSlicedArray = numArray.slice();
-newSlicedArray.splice(1, 1);
-console.log(newSlicedArray);
+function createTable(cols, rows) {
+  if (rows <= 1 && cols <= 1) {
+    return alert(
+      "Numărul de coloane și rânduri nu trebuie să fie 1 sau negativ!",
+    );
+  }
+  const tbl = document.createElement("table");
+  document.getElementById("div-table").appendChild(tbl);
+  for (let i = 0; i < rows; i++) {
+    const row = document.createElement("tr");
+    tbl.appendChild(row);
+    for (let j = 0; j < cols; j++) {
+      if (i === 0) {
+        const header = document.createElement("th");
+        header.innerHTML = `Header ${j + 1}`;
+        row.appendChild(header);
+        continue;
+      }
+      const column = document.createElement("td");
+      column.innerHTML = `[${j}][${i}]`;
+      row.appendChild(column);
+    }
+  }
+}
+
+//5.12
+document.getElementById("submit-list").addEventListener("click", function () {
+  const value = document.getElementById("input-list").value;
+  if (!value) {
+    return alert(`Inputul nu trebuie să fie gol`);
+  }
+  let ulist = document.getElementById("new-un-list");
+
+  if (!ulist) {
+    ulist = document.createElement("ul");
+    ulist.id = "new-un-list";
+    document.body.appendChild(ulist);
+  }
+
+  const element = document.createElement("li");
+  element.innerHTML = value;
+  ulist.appendChild(element);
+});
